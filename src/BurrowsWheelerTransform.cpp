@@ -9,6 +9,7 @@
 #include "BurrowsWheelerTransform.h"
 
 #include <vector>
+#include <cstring>
 
 namespace CSE_584A
 {
