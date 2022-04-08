@@ -43,9 +43,6 @@ namespace CSE_584A
 
    // Stack based.
    void EnumTree(const EnumTreeData& data, BiInterval I, int kLow, int kHigh, int* kmerCount);
-
-   // Recursive based.
-   void EnumTree(const EnumTreeData& data, BiInterval I, int d, int kLow, int kHigh, int* kmerCount);
 }
 
 #endif

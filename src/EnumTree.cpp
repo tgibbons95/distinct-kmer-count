@@ -16,6 +16,18 @@
 
 namespace CSE_584A
 {
+   struct BiIntervalDepth
+   {
+      BiInterval I;
+      int depth;
+      BiIntervalDepth(const BiInterval I, int depth)
+         :I(I)
+         , depth(depth)
+      {
+
+      }
+   };
+
    bool CheckRightDiversity(const EnumTreeData& data, BiInterval I, int d)
    {
       bool diverse = false;
@@ -30,69 +42,6 @@ namespace CSE_584A
       }
       return diverse;
    }
-
-   void EnumTree(const EnumTreeData& data, BiInterval I, int d, int kLow, int kHigh, int* kmerCount)
-   {
-      int alphabetSize = std::strlen(data.alphabet);
-
-      if (CheckRightDiversity(data, I, d))
-      {
-         for (int i = kLow; i <= kHigh; ++i)
-         {
-            if (d >= i)
-            {
-               kmerCount[i - kLow] += 1;
-               char a = '!';
-               for (int j = I.forward.start; j <= I.forward.end; ++j)
-               {
-                  if (data.forward.S[data.forward.A[j] + d] != a)
-                  {
-                     a = data.forward.S[data.forward.A[j] + d];
-                     kmerCount[i - kLow] -= 1;
-                  }
-               }
-            }
-         }
-
-         for (int i = 0; i < alphabetSize; ++i)
-         {
-            BiInterval I_prime;
-            I_prime.forward.start = data.forward.C[i] + (I.forward.start > 0 ? data.forward.Occ[i][I.forward.start - 1] : 0);
-            I_prime.forward.end = data.forward.C[i] + data.forward.Occ[i][I.forward.end] - 1;
-
-            bool startSet = false;
-            I_prime.reverse.start = I.reverse.end;
-            I_prime.reverse.end = I.reverse.end;
-            for (int j = I.reverse.start; j <= I.reverse.end; ++j)
-            {
-               if (!startSet && data.reverse.S[data.reverse.A[j] + d] == data.alphabet[i])
-               {
-                  startSet = true;
-                  I_prime.reverse.start = j;
-               }
-               else if (data.reverse.S[data.reverse.A[j] + d] > data.alphabet[i])
-               {
-                  I_prime.reverse.end = j - 1;
-                  break;
-               }
-            }
-
-            EnumTree(data, I_prime, d + 1, kLow, kHigh, kmerCount);
-         }
-      }
-   }
-
-   struct BiIntervalDepth
-   {
-      BiInterval I;
-      int depth;
-      BiIntervalDepth(const BiInterval I, int depth)
-         :I(I)
-         , depth(depth)
-      {
-
-      }
-   };
 
    void EnumTree(const EnumTreeData& data, BiInterval initialI, int kLow, int kHigh, int* kmerCount)
    {
@@ -137,7 +86,7 @@ namespace CSE_584A
                I_prime.forward.start = data.forward.C[i] + (I.forward.start > 0 ? data.forward.Occ[i][I.forward.start - 1] : 0);
                I_prime.forward.end = data.forward.C[i] + data.forward.Occ[i][I.forward.end] - 1;
 
-               // O(log(T)) get first and last position in reverse.
+               // Get first and last position in reverse.
                bool startSet = false;
                I_prime.reverse.start = I.reverse.end;
                I_prime.reverse.end = I.reverse.end;
