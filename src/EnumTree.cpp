@@ -12,6 +12,7 @@
 #include <list>
 #include <stack>
 #include <iostream>
+#include <cstring>
 
 namespace CSE_584A
 {
