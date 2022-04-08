@@ -7,7 +7,7 @@
 
 #include <queue>
 #include <iostream>
-#include <cmath>
+#include <cstring>
 
 namespace CSE_584A
 {
@@ -46,8 +46,6 @@ namespace CSE_584A
             EXPECT_EQ(expectedB[i], B[i]);
          }
       }
-
-      
 
       TEST(Kmer, Banana)
       {
@@ -110,7 +108,7 @@ namespace CSE_584A
          }
          EnumTree(data, I, kLow, kHigh, kmerCount);
 
-         EXPECT_TRUE(::memcmp(expectedKmerCount, kmerCount, sizeof(kmerCount)) == 0);
+         EXPECT_TRUE(std::memcmp(expectedKmerCount, kmerCount, sizeof(kmerCount)) == 0);
       }
    }
 }

@@ -6,6 +6,7 @@
 #include "EnumTree.h"
 
 #include <array>
+#include <cstring>
 #include <iostream>
 #include <fstream>
 #include <future>
