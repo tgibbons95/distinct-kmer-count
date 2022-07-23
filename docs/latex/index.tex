@@ -1,0 +1,73 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ 
+
+ {\bfseries{Table of Contents}} 
+\begin{DoxyEnumerate}
+\item \href{\#about-the-project}{\texttt{ About The Project}} 
+\begin{DoxyItemize}
+\item \href{\#output}{\texttt{ Output}} 
+\item \href{\#built-with}{\texttt{ Built With}} 
+\end{DoxyItemize}
+\item \href{\#getting-started}{\texttt{ Getting Started}} 
+\begin{DoxyItemize}
+\item \href{\#prerequisites}{\texttt{ Prerequisites}} 
+\item \href{\#installation}{\texttt{ Installation}} 
+\item \href{\#usage}{\texttt{ Usage}} 
+\end{DoxyItemize}
+\item \href{\#license}{\texttt{ License}} 
+\item \href{\#acknowledgments}{\texttt{ Acknowledgments}} 
+\end{DoxyEnumerate}
+
+\hypertarget{index_autotoc_md0}{}\doxysubsection{About The Project}\label{index_autotoc_md0}
+This project is meant to find the number of unique K-\/mers in the suffix tree using the BWT and Reverse BWT of a string. The output computed in this repo was found from a provided DNA segquence for the assignment.
+
+Known implementation issues
+\begin{DoxyItemize}
+\item Issues finding the children of an internal node and decrementing the kmer count in constant time. The algorithm should still compute the value correctly, but is linear in finding the children. In the worst case, this algorithm will run O(n$^\wedge$2). With the provided input for this assignment, the sequence still ran quickly because it wasn\textquotesingle{}t a worst case scenario.
+\end{DoxyItemize}
+
+(\href{\#top}{\texttt{ back to top}})\hypertarget{index_autotoc_md1}{}\doxysubsubsection{Output}\label{index_autotoc_md1}
+\href{https://github.com/wustl-cse584/homework-3-problem-3-ThomasGibbonsIV/blob/main/output/output.txt}{\texttt{ Kmers 20-\/40}}
+
+(\href{\#top}{\texttt{ back to top}})\hypertarget{index_autotoc_md2}{}\doxysubsubsection{Built With}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item \href{https://cmake.org/}{\texttt{ CMake}}
+\item \href{https://www.cplusplus.com/}{\texttt{ C++}}
+\item \href{https://github.com/google/googletest}{\texttt{ Google\+Test}}
+\end{DoxyItemize}
+
+(\href{\#top}{\texttt{ back to top}})\hypertarget{index_autotoc_md3}{}\doxysubsection{Getting Started}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsubsection{Prerequisites}\label{index_autotoc_md4}
+This project requires at least C++14 because of calls to std\+::make\+\_\+unique\hypertarget{index_autotoc_md5}{}\doxysubsubsection{Installation}\label{index_autotoc_md5}
+A few example installations are provided for compilers \href{https://github.com/wustl-cse584/homework-3-problem-3-ThomasGibbonsIV/blob/main/build-clang.sh}{\texttt{ clang}}, \href{https://github.com/wustl-cse584/homework-3-problem-3-ThomasGibbonsIV/blob/main/build-gcc.sh}{\texttt{ gcc}}, \href{https://github.com/wustl-cse584/homework-3-problem-3-ThomasGibbonsIV/blob/main/build-minGW.sh}{\texttt{ min\+GW}}, and \href{https://github.com/wustl-cse584/homework-3-problem-3-ThomasGibbonsIV/blob/main/build-msvc.sh}{\texttt{ msvc}}.
+
+Running any of these scripts will create a build and install directory with a subdirectory with the chosen compiler. Things to known are that the implementation does use std\+::thread so some compilers (namely min\+GW) may need additional installed add-\/on libraries that do not come with the initial download of the compiler. The install should look like the following (example done with Windows)
+
+
+\begin{DoxyItemize}
+\item include
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{_burrows_wheeler_transform_8h}{Burrows\+Wheeler\+Transform.\+h}}
+\item \mbox{\hyperlink{_enum_tree_8h}{Enum\+Tree.\+h}}
+\item \mbox{\hyperlink{_suffix_array_8h}{Suffix\+Array.\+h}}
+\end{DoxyItemize}
+\item lib
+\begin{DoxyItemize}
+\item Distinct\+Kmer\+Lib.\+lib
+\end{DoxyItemize}
+\item test
+\begin{DoxyItemize}
+\item Distinct\+Kmer\+Test.\+exe
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysubsubsection{Usage}\label{index_autotoc_md6}
+To run simply place the sequence file {\ttfamily human-\/seq.\+txt} in the same directory as the executable and then kick off the executable. If these files aren\textquotesingle{}t included, then it will just run against smaller test case inputs.
+
+./\+Distinct\+Kmer\+Test.exe
+
+(\href{\#top}{\texttt{ back to top}})\hypertarget{index_autotoc_md7}{}\doxysubsection{License}\label{index_autotoc_md7}
+Distributed under the MIT License. See {\ttfamily LICENSE} for more information.
+
+(\href{\#top}{\texttt{ back to top}})\hypertarget{index_autotoc_md8}{}\doxysubsection{Acknowledgments}\label{index_autotoc_md8}
+Used \href{https://github.com/othneildrew/Best-README-Template}{\texttt{ README-\/\+Template}} to create this readme. 
