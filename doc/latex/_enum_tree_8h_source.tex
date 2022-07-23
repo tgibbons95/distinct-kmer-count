@@ -1,0 +1,47 @@
+\hypertarget{_enum_tree_8h_source}{}\doxysection{Enum\+Tree.\+h}
+\label{_enum_tree_8h_source}\index{include/EnumTree.h@{include/EnumTree.h}}
+\mbox{\hyperlink{_enum_tree_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*****************************************************************/}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef ENUM\_TREE\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define ENUM\_TREE\_H}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_c_s_e__584_a}{CSE\_584A}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14    \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval}{Interval}}}
+\DoxyCodeLine{15    \{}
+\DoxyCodeLine{16       \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval_ae4876a7b6e7da2025bbfdaf7c699bd6a}{start}};}
+\DoxyCodeLine{17       \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval_a34e59b6e02c90e66aff0214803338f36}{end}};}
+\DoxyCodeLine{18    \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20    \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{BiInterval}}}
+\DoxyCodeLine{21    \{}
+\DoxyCodeLine{22       \mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval}{Interval}} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval_abe44bd7d1024c365b360a222e80e547c}{forward}};}
+\DoxyCodeLine{23       \mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval}{Interval}} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval_af0eb75bd6bc7171cb082795c698ad5a4}{reverse}};}
+\DoxyCodeLine{24    \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26    \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data}{BwtData}}}
+\DoxyCodeLine{27    \{}
+\DoxyCodeLine{28       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data_a5d5dfd9755d335072841c4b2b8796d04}{S}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{29       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data_a365e516d0a93fd829825867ae99907d7}{B}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{30       \textcolor{keyword}{const} \textcolor{keywordtype}{int}* \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data_a67f49116c5a4f9aa8399c2ff04be4f5d}{A}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{31       \textcolor{keyword}{const} \textcolor{keywordtype}{int}* \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data_a5aac6078d3617e9564094154d5db6729}{C}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{32       \textcolor{keywordtype}{int}** \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data_a7f20423fdc39297eae941388977aec86}{Occ}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{33    \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35    \textcolor{keyword}{struct }\mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{EnumTreeData}}}
+\DoxyCodeLine{36    \{}
+\DoxyCodeLine{37       \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data}{BwtData}} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data_a5678c0ac81832c7d7d81db0a8ca22cb4}{forward}};}
+\DoxyCodeLine{38       \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data}{BwtData}} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data_a73431486611859e329da2f8889be827e}{reverse}};}
+\DoxyCodeLine{39       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data_a9791a6fc49e8a6ef5a53de6e4e4d5151}{alphabet}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{40    \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42    \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_c_s_e__584_a_a23ec79504207d32521a70caaede36ed3}{CheckRightDiversity}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{EnumTreeData}}\& data, \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{BiInterval}} I, \textcolor{keywordtype}{int} d);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44    \textcolor{comment}{// Stack based.}}
+\DoxyCodeLine{45    \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_c_s_e__584_a_a596a050253a4cc91cf2a23c52a6c4145}{EnumTree}}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{EnumTreeData}}\& data, \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{BiInterval}} I, \textcolor{keywordtype}{int} kLow, \textcolor{keywordtype}{int} kHigh, \textcolor{keywordtype}{int}* kmerCount);}
+\DoxyCodeLine{46 \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

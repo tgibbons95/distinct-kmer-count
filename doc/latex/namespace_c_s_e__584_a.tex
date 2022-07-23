@@ -1,0 +1,95 @@
+\hypertarget{namespace_c_s_e__584_a}{}\doxysection{CSE\+\_\+584A Namespace Reference}
+\label{namespace_c_s_e__584_a}\index{CSE\_584A@{CSE\_584A}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{Bi\+Interval}}
+\item 
+struct \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval_depth}{Bi\+Interval\+Depth}}
+\item 
+struct \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bwt_data}{Bwt\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{Enum\+Tree\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_c_s_e__584_a_1_1_interval}{Interval}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_c_s_e__584_a_a804ea4083bd0f891d20038d2ad8c26c8}{Compute\+Burrows\+Wheeler\+Transform}} (const char $\ast$S, const int $\ast$A, char $\ast$B, int n)
+\begin{DoxyCompactList}\small\item\em Computes the suffix array for string S. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_c_s_e__584_a_a880b00eea659be0a253854dac0286498}{Compute\+Rprev}} (const char $\ast$S, const char $\ast$alphabet, int $\ast$C, int $\ast$$\ast$Occ, int n, int k, int alphabet\+Size)
+\item 
+bool \mbox{\hyperlink{namespace_c_s_e__584_a_a23ec79504207d32521a70caaede36ed3}{Check\+Right\+Diversity}} (const \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{Enum\+Tree\+Data}} \&data, \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{Bi\+Interval}} I, int d)
+\item 
+void \mbox{\hyperlink{namespace_c_s_e__584_a_a596a050253a4cc91cf2a23c52a6c4145}{Enum\+Tree}} (const \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{Enum\+Tree\+Data}} \&data, \mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{Bi\+Interval}} initialI, int k\+Low, int k\+High, int $\ast$kmer\+Count)
+\item 
+void \mbox{\hyperlink{namespace_c_s_e__584_a_ac1baa171ce836a804597ad0582b8ffca}{Compute\+Suffix\+Array}} (const char $\ast$S, int $\ast$A, int $\ast$G, int n)
+\begin{DoxyCompactList}\small\item\em Computes the suffix array for string S. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_c_s_e__584_a_a23ec79504207d32521a70caaede36ed3}\label{namespace_c_s_e__584_a_a23ec79504207d32521a70caaede36ed3}} 
+\index{CSE\_584A@{CSE\_584A}!CheckRightDiversity@{CheckRightDiversity}}
+\index{CheckRightDiversity@{CheckRightDiversity}!CSE\_584A@{CSE\_584A}}
+\doxysubsubsection{\texorpdfstring{CheckRightDiversity()}{CheckRightDiversity()}}
+{\footnotesize\ttfamily bool CSE\+\_\+584\+A\+::\+Check\+Right\+Diversity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{Enum\+Tree\+Data}} \&}]{data,  }\item[{\mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{Bi\+Interval}}}]{I,  }\item[{int}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_c_s_e__584_a_a804ea4083bd0f891d20038d2ad8c26c8}\label{namespace_c_s_e__584_a_a804ea4083bd0f891d20038d2ad8c26c8}} 
+\index{CSE\_584A@{CSE\_584A}!ComputeBurrowsWheelerTransform@{ComputeBurrowsWheelerTransform}}
+\index{ComputeBurrowsWheelerTransform@{ComputeBurrowsWheelerTransform}!CSE\_584A@{CSE\_584A}}
+\doxysubsubsection{\texorpdfstring{ComputeBurrowsWheelerTransform()}{ComputeBurrowsWheelerTransform()}}
+{\footnotesize\ttfamily void CSE\+\_\+584\+A\+::\+Compute\+Burrows\+Wheeler\+Transform (\begin{DoxyParamCaption}\item[{const char $\ast$}]{S,  }\item[{const int $\ast$}]{A,  }\item[{char $\ast$}]{B,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Computes the suffix array for string S. 
+
+Using the precomputed suffix array, in linear time the burrows wheeler tranform computes the previous character at each suffix array index.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em S} & The string on which to compute the Burrows-\/\+Wheeler transform. \\
+\hline
+\mbox{\texttt{ in}}  & {\em A} & The precomputed suffix array of string S. \\
+\hline
+\mbox{\texttt{ out}}  & {\em B} & The Burrows-\/\+Wheeler transform of string S. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & The length of string S, suffix array A, and Burrows-\/\+Wheeler tranform B. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_c_s_e__584_a_a880b00eea659be0a253854dac0286498}\label{namespace_c_s_e__584_a_a880b00eea659be0a253854dac0286498}} 
+\index{CSE\_584A@{CSE\_584A}!ComputeRprev@{ComputeRprev}}
+\index{ComputeRprev@{ComputeRprev}!CSE\_584A@{CSE\_584A}}
+\doxysubsubsection{\texorpdfstring{ComputeRprev()}{ComputeRprev()}}
+{\footnotesize\ttfamily void CSE\+\_\+584\+A\+::\+Compute\+Rprev (\begin{DoxyParamCaption}\item[{const char $\ast$}]{S,  }\item[{const char $\ast$}]{alphabet,  }\item[{int $\ast$}]{C,  }\item[{int $\ast$$\ast$}]{Occ,  }\item[{int}]{n,  }\item[{int}]{k,  }\item[{int}]{alphabet\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_c_s_e__584_a_ac1baa171ce836a804597ad0582b8ffca}\label{namespace_c_s_e__584_a_ac1baa171ce836a804597ad0582b8ffca}} 
+\index{CSE\_584A@{CSE\_584A}!ComputeSuffixArray@{ComputeSuffixArray}}
+\index{ComputeSuffixArray@{ComputeSuffixArray}!CSE\_584A@{CSE\_584A}}
+\doxysubsubsection{\texorpdfstring{ComputeSuffixArray()}{ComputeSuffixArray()}}
+{\footnotesize\ttfamily void CSE\+\_\+584\+A\+::\+Compute\+Suffix\+Array (\begin{DoxyParamCaption}\item[{const char $\ast$}]{S,  }\item[{int $\ast$}]{A,  }\item[{int $\ast$}]{G,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Computes the suffix array for string S. 
+
+Using the Manber Myers suffix array construction, the suffix array A is computed along with a rank array G.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em S} & The string on which to compute the suffix array. \\
+\hline
+\mbox{\texttt{ out}}  & {\em A} & The suffix array of string S. \\
+\hline
+\mbox{\texttt{ out}}  & {\em G} & The rank array of string S. \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & The length of string S, suffix array A, and rank array G. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_c_s_e__584_a_a596a050253a4cc91cf2a23c52a6c4145}\label{namespace_c_s_e__584_a_a596a050253a4cc91cf2a23c52a6c4145}} 
+\index{CSE\_584A@{CSE\_584A}!EnumTree@{EnumTree}}
+\index{EnumTree@{EnumTree}!CSE\_584A@{CSE\_584A}}
+\doxysubsubsection{\texorpdfstring{EnumTree()}{EnumTree()}}
+{\footnotesize\ttfamily void CSE\+\_\+584\+A\+::\+Enum\+Tree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_s_e__584_a_1_1_enum_tree_data}{Enum\+Tree\+Data}} \&}]{data,  }\item[{\mbox{\hyperlink{struct_c_s_e__584_a_1_1_bi_interval}{Bi\+Interval}}}]{initialI,  }\item[{int}]{k\+Low,  }\item[{int}]{k\+High,  }\item[{int $\ast$}]{kmer\+Count }\end{DoxyParamCaption})}
+
